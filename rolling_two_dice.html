@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+  <html>
+   <head>
+  <meta charset = "utf-8">
+   <title> Rolling of Two Dice </title>
+
+	<style type = "text/css">
+
+	table   { width: 300px;
+                border-collapse:collapse; 
+                background-color: lightblue; }
+	table, td, th { border: 1px solid black; 
+                padding: 4px; }
+	td            { width: 50%; }
+	th            { text-align: center; 
+                color: white;
+                background-color: darkblue; }
+tr.oddrow     { background-color: white; }
+
+	table, table th, table td {
+			text-align: center;
+			padding: 5px;
+		}
+
+	</style>
+
+    <script type = "text/javascript">
+
+	var Die1;
+        var Die2;
+	var Sum;
+	var percent;
+	var frequency = [ , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];	
+
+
+	for (var i = 1; i <= 36000; ++i)
+	   {
+	  
+	     Die1 = Math.floor(1 + Math.random() * 6);
+	     Die2 = Math.floor(1 + Math.random() * 6);
+
+		Sum = Die1 + Die2;
+
+   		  ++frequency[Sum];	   	
+		
+		 
+<!--	       	document.writeln("("+ Die1 +" , "+ Die2 +")");
+<!--            document.writeln("("+ Die1 +" + "+ Die2 +")");			
+<!--		document.writeln ( Sum );	
+		
+   }
+
+	document.writeln( "<h1>Table: Rolling of two Dice one after the other 36000 times</h1>" );
+	
+	document.writeln("<table border = \"l\"" + "width = \"50%\">");
+
+	document.writeln("<thead><th width = \"50\"" + "align = \"left\"> Sum<th align = \"left\">" +
+			"Frequency<th align = \"center\">" + "Percent </th></thead></tbody>");
+
+	for (Sum = 2; Sum < frequency.length; ++Sum)
+	
+	document.writeln("<tr><td>" + Sum + "</td><td>" +
+		  frequency[Sum] + "</td><td>" + (frequency[Sum]/i * 100).toFixed(2)  + "</td></tr>");
+
+	document.writeln("</tbody></table>");	
+	
+        </script>
+      </head>
+
+    <body> 
+	<h2>Note: There are six ways to roll the sum of 7. Approximately 1/6 of all the rolls
+	 are 7. Hence, this is a reasonable result.</h2>
+	
+  </body>
+
+</html>
